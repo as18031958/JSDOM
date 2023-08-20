@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    
+</head>
+<body>
+    <button onclick="text()">Question1</button>
+    <h2 id="qns">Write the code to access element which is having id as "text"</h2>
+    <h2 id="text">I am A text </h2>
+    <style>
+        #qns{
+            color:red
+        }
+        #text{
+            
+            color: green;
+         }
+    </style>
+     <script>
+        function text(){
+          var element= document.getElementById("text")
+        if (element.style.display === "none") {
+            element.style.display = "inline";
+        } else {
+            element.style.display = "none";
+        }
+    }
+    </script>
+    <br>
+
+<button onclick="heading()">Question2</button>
+<h2 id="qns">Write the code to access element which is having tag as "h1"</h2>
+<h1>I am A heading1 </h1>
+<style>
+    #qns{
+        color:red
+    }
+     h1{
+        color: green;
+     } 
+</style>
+ <script>
+    function heading(){
+      var elements
+      = document.getElementsByTagName("h1")
+       for(var i=0;i<elements.length;i++){
+         var element=elements[i]
+    if (element.style.display === "none") {
+        element.style.display = "inline";
+    } else {
+        element.style.display = "none";
+    }
+}
+}
+</script>
+
+<br>
+
+<button onclick="Mainbox()">Question3</button>
+<h2 id="qns">Write the code to access element which is having class as "box"</h2>
+<h2 class="box">this is box class</h2>
+<style>
+    #qns{
+        color: red;
+    }
+    .box{
+        color: green;
+    }
+</style>
+<script>
+    function Mainbox(){
+    var elements= document.getElementsByClassName("box")
+    for(var i=0;i<elements.length;i++){
+       var element=elements[i]
+    if(element.style.display === "none"){
+        element.style.display = "inline"
+    }else{
+        element.style.display ="none"
+
+        }
+    }
+
+ }
+ </script>
+ <br>
+
+ <button onclick="Change()">Question4</button>
+ <h2 id="qns">Change the heading from ""Hello"" to ""Hello World"" using DOM functions"</h2>
+ <h1 class="Changehead">Hello</h1>
+ <style>
+    #qns{
+        color: red;
+    }
+    .Changehead{
+       color: green;
+    }
+ </style>
+ <script>
+    function Change(){
+    var elements=document.getElementsByClassName("Changehead")
+        
+    for(var i=0;i<elements.length;i++){
+        var element=elements[i]
+        element.innerText="Hello World"
+        if(element.style.display === "none"){
+            element.style.display = "inline"
+        }else{
+            
+             element.style.display === "none"
+        }
+    }
+}
+</script>
+<br>
+<button onclick="Replace()">Question5</button>
+ <h2 id="qns">Change the heading from ""Hello"" to ""Hello World"" using DOM functions"</h2>
+ <h1 class="ChangeText">Hello World</h1>
+ <style>
+    #qns{
+        color: red;
+    }
+    .Changehead{
+       color: green;
+    }
+ </style>
+ <script>
+    function Replace(){
+    var elements=document.getElementsByClassName("ChangeText")
+        
+    for(var i=0;i<elements.length;i++){
+        var element=elements[i]
+        element.innerText="Welcome to Elevation Academy"
+        if(element.style.display === "none"){
+            element.style.display = "inline"
+        }else{
+            
+             element.style.display === "none"
+        }
+    }
+}
+</script>
+<br>
+<button onclick="setAtt()">Question6</button>
+ <h2 id="qns">"Add one style attribute and give text color as red and id attribute and give the id value as ""heading"" in the above given h1 tag using DOM functions"</h2>
+ <h3>Hello</h3>
+ <style>
+    #qns{
+        color: red;
+    }
+      h3{
+       color: green;
+    }  
+ </style>
+ <script>
+    function setAtt(){
+    var heading=document.querySelector("h3")
+    //   elements.style.color="red"
+         
+      heading.setAttribute("id","heading")
+      heading.style.color="red"
+        if(heading.style.display === "none"){
+            heading.style.display = "inline"
+        }else{
+            
+             heading.style.display === "none"
+        }
+    }
+
+</script>
+<br>
+
+<button onclick="Direction()">Question7</button>
+ <h2 id="qns">Create three cards on HTML page and arrange them using flex property in row or horizontal direction and also create button at the bottom named "Change Flex direction". When user clicks on this button, the cards arrangement should be changed to vertical direction.</h2>
+ <div class="container">
+    <div class="card">card1</div>
+    <div class="card">card2</div>
+    <div class="card">card3</div>
+
+ </div>
+<style>
+    .container{
+        display: flex;
+        flex-direction: row;
+
+    }
+    .card{
+        height: 100px;
+        width: 200px;
+        margin: 20px;
+        background-color: red;
+    }
+</style>
+<script>
+    function Direction(){
+    var element=document.querySelector(".container")
+    if(element.style.flexDirection ==="row"){
+        element.style.flexDirection = "column"
+    }else{
+        element.style.flexDirection = "row"
+    }
+
+    }
+</script>
+<br>
+<button onclick="table()">Question8</button>
+ <h2 id="qns">What’s the difference between window vs document?</h2>
+ <table class="Changehead" border="1">
+    <thead>
+        <th>Document</th>
+        <th>Windows</th>
+    </thead>
+    <tbody>
+        <tr>
+        <td>It represents the document loaded inside the window or browser.</td>
+        <td>It represents the browser window in which you are seeing the content.</td>
+        </tr>
+        <tr>
+            <td>The properties related to it are stored in the document object.</td>
+            <td>The properties related to it are stored in the window object.</td>
+        </tr>
+        <tr>
+            <td>It is loaded after the loading window because the window contains a document.</td>
+            <td>It is loaded before the document because window container document.</td>
+        </tr>
+        <tr>
+            <td>It is the root element of the document object model.</td>
+            <td>The window is the global element for all objects, functions, etc.</td>
+        </tr>
+        <tr>
+            <td>It is an object of window.</td>
+            <td>It is an object of the browser.</td>
+        </tr>
+    </tbody>
+    
+
+</table>
+ <style>
+    #qns{
+        color: red;
+    }
+    .Changehead{
+       color: green;
+    }
+ </style>
+ <script>
+    function table(){
+    var elements=document.getElementsByClassName("Changehead")
+        
+    for(var i=0;i<elements.length;i++){
+        var element=elements[i]
+        if(element.style.display === "none"){
+            element.style.display = "inline"
+        }else{
+            
+             element.style.display = "none"
+        }
+    }
+}
+</script>
+<br>
+<button onclick="clock()">Question9</button>
+<h2 id="qns">Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second</h2>
+
+<div class="time">
+    <div>
+        <p>TIME</p>
+    </div>
+    <div class="time2">
+        <div class="hours">
+            <p id="hrs">11</p>
+            <p>hours</p>
+        </div>
+        <div>
+            <p>:</p>
+        </div>
+        <div class="mins">
+            <p id="mins">46</p>
+            <p>mins</p>
+        </div>
+        <div>
+            <p>:</p>
+        </div>
+        <div class="sec">
+            <p id="secs">30</p>
+            <p>sec</p>
+        </div>
+        <div class="ampm">
+            <p id="ampm">AM</p>
+        </div>
+    </div>
+
+</div>
+<style>
+    #qns{
+        color:red
+    }
+     h1{
+        color: green;
+     } 
+     /* .time{
+        display: flex;
+        justify-content: space-evenly */
+        
+     /* } */
+     .time2{
+        display: flex;
+        justify-content: center;
+         flex-direction: row; 
+     }
+     
+</style>
+ <script>
+    function clock(){
+       let date = new Date()
+       let hours=date.getHours()
+       let minutes=date.getMinutes()
+       let seconds=date.getSeconds()
+       if(hours>12){
+        hours=hours-12}
+
+       console.log(hours,minutes,seconds)
+    
+       //    assigning real times value
+ let hrs= document.getElementById("hrs")
+ hrs.innerText=hours
+ let mins= document.getElementById("mins")
+ mins.innerText=minutes
+ let sec= document.getElementById("secs")
+ sec.innerText=seconds
+    
+   var element
+          = document.getElementsByClassName("time")
+for(var i=0;i<elements.length;i++){
+         var element=elements[i]
+    if (element.style.display === "none") {
+        element.style.display = "inline";
+    } else {
+        element.style.display = "none";
+    }
+}
+}
+    setInterval(()=>{
+        clock()    
+    },1000)
+// chnage Am/pm
+    let date = new Date()
+       let hours=date.getHours()
+       if(hours>=12){
+        let ampm = document.getElementById('ampm')
+        ampm.innerText="PM"
+       }else if(hours<12){
+        let ampm = document.getElementById('ampm')
+        ampm.innerText="AM"}
+    
+    
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
